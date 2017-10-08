@@ -111,14 +111,14 @@ class User
      * @param string $name
      * @param string $password
      */
-    public static function edit($userId, $name, $surname, $gender, $number_groop,
+    public static function edit($userId, $name, $surname, $gender, $number_groop, $email,
                                          $number_balls, $year_birth, $local_in_town, $password)
     {
         $db = Db::getConnection();
 
         $sql = "UPDATE students 
             SET name = :name, password = :password, surname = :surname, gender = :gender, number_groop = :number_groop, "
-            . "number_balls = :number_balls, year_birth = :year_birth, local_in_town = :local_in_town, "
+            . "email = :email, number_balls = :number_balls, year_birth = :year_birth, local_in_town = :local_in_town, "
             . "password = :password
             WHERE id = :id";
 
@@ -128,6 +128,7 @@ class User
         $result->bindParam(':surname', $surname, PDO::PARAM_STR);
         $result->bindParam(':gender', $gender, PDO::PARAM_STR);
         $result->bindParam(':number_groop', $number_groop, PDO::PARAM_INT);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
         $result->bindParam(':number_balls', $number_balls, PDO::PARAM_INT);
         $result->bindParam(':year_birth', $year_birth, PDO::PARAM_INT);
         $result->bindParam(':local_in_town', $local_in_town, PDO::PARAM_STR);

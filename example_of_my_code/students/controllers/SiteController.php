@@ -23,7 +23,7 @@ class SiteController
         $students = Student::getStudents();
 
         $studentsOnPage = array(1);
-        $studentsOnPage = Student::getStudentsOnPage(6);
+        $studentsOnPage = Student::getStudentsOnPage(50);
 
         require_once(ROOT . '/views/site/index.php');
 

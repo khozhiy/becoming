@@ -38,45 +38,8 @@ class UserController
 
             $errors = false;
 
-            if (!MyValidation::checkName($name)) {
-                $errors[] = 'Имя не должно быть короче 2-х или длиннее 200 символов';
-            }
-
-            if (!MyValidation::checkSurname($surname)) {
-                $errors[] = 'Фамилия не должна быть короче 2-х или длиннее 200 символов';
-            }
-
-            if (!MyValidation::checkGender($gender)) {
-                $errors[] = "В поле 'Пол' неверная инфорамация. Доступно: Мужской/Женский";
-            }
-
-            if (MyValidation::checkNumber_groop($number_groop)) {
-                $errors[] = 'Количество цифр группы должно быть равно 4 или введены неверные данные';
-            }
-
-            if (MyValidation::checkNumber_balls($number_balls)) {
-                $errors[] = 'Количество цифр баллов ВНО должно быть = 3 и в диапазоне(100-200)';
-            }
-
-            if (MyValidation::checkYear_birth($year_birth)) {
-                $errors[] = 'Год рождения не может быть менее 1990-го и более 2017 или введены неверные данные';
-            }
-
-            if (!MyValidation::checkEmail($email)) {
-                $errors[] = 'Неправильный email';
-            }
-
-            if (MyValidation::checkEmailExists($email)) {
-                $errors[] = 'Такой email уже используется';
-            }
-
-            if (!MyValidation::checkLocal($local_in_town)) {
-                $errors[] = "В поле 'Местный/Приезжий' неверная информация. Доступно: Местный/Приезжий";
-            }
-
-            if (!MyValidation::checkPassword($password)) {
-                $errors[] = 'Пароль должен быть более 6-и символов';
-            }
+            $errors = MyValidation::Valid($name, $surname, $gender, $number_groop, $email,
+                $number_balls, $year_birth, $local_in_town, $password);
 
             if ($errors == false) {
                 $result = User::register($name, $surname, $gender, $number_groop,  $email,
@@ -84,7 +47,6 @@ class UserController
                 //Запоминаем пользователя (сессия)
                 $userId = User::checkUserData($email, $password);
                 User::auth($userId);
-                header("Location: /cabinet/");
             }
         }
         require_once(ROOT . '/views/user/register.php');

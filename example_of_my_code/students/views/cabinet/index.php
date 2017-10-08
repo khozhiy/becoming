@@ -16,9 +16,9 @@
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
-                        <p>Ваш E-mail:<?php echo $email?></p>
                         <div class="signup-form"><!--sign up form-->
                             <h2>Редактирование данных</h2>
+                            <h4>Ваш E-mail: <?php echo $email;?></h4>
                             <form action="#" method="post">
                                 <p>Имя:</p>
                                 <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
