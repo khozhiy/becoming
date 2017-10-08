@@ -24,6 +24,7 @@ function sortTable(n) {
             if (dir == "asc") {
                 if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                     //если это asc, переключите таблицу и выйдете из цикла:
+                    $("#id").attr("src","/template/img/sort_both.png");
                     shouldSwitch= true;
                     break;
                 }

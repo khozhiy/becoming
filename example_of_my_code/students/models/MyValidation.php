@@ -9,7 +9,7 @@
 class MyValidation
 {
     public static function Valid($name, $surname, $gender, $number_groop, $email,
-                                 $number_balls, $year_birth, $local_in_town, $password)
+                                 $number_balls, $year_birth, $local_in_town, $password, $user)
     {
         $errors = array();
         if (MyValidation::checkName($name) == false) {
@@ -40,7 +40,7 @@ class MyValidation
             $errors[] = 'Неправильный email';
         };
 
-        if (MyValidation::checkEmailExists($email)) {
+        if (MyValidation::checkEmailExists($email) && $email != $user['email']) {
             $errors[] = 'Такой email уже используется';
         };
 
@@ -52,7 +52,6 @@ class MyValidation
             $errors[] = 'Пароль должен быть более 6-и символов';
         };
 
-        print_r($errors);
         return $errors;
     }
 

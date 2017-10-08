@@ -37,6 +37,7 @@ class CabinetController
             $surname = $_POST['surname'];
             $gender = $_POST['gender'];
             $number_groop = $_POST['number_groop'];
+            $email = $_POST['email'];
             $number_balls = $_POST['number_balls'];
             $year_birth = $_POST['year_birth'];
             $local_in_town = $_POST['local_in_town'];
@@ -45,10 +46,10 @@ class CabinetController
             $errors = false;
 
             $errors = MyValidation::Valid($name, $surname, $gender, $number_groop, $email,
-                $number_balls, $year_birth, $local_in_town, $password);
+                $number_balls, $year_birth, $local_in_town, $password, $user);
 
             if ($errors == false) {
-                $result = User::edit($userId, $name, $surname, $gender, $number_groop,
+                $result = User::edit($userId, $name, $surname, $gender, $number_groop, $email,
                     $number_balls, $year_birth, $local_in_town, $password);
             }
         }

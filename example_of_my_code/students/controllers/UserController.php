@@ -39,7 +39,7 @@ class UserController
             $errors = false;
 
             $errors = MyValidation::Valid($name, $surname, $gender, $number_groop, $email,
-                $number_balls, $year_birth, $local_in_town, $password);
+                $number_balls, $year_birth, $local_in_town, $password, NULL);
 
             if ($errors == false) {
                 $result = User::register($name, $surname, $gender, $number_groop,  $email,

@@ -39,7 +39,6 @@
             <a class="brand" href="/">Students</a>
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li class="active"><a href="/">Home</a></li>
                     <?php if(isset($_SESSION['user'])): ?>
                         <li> <a href="/cabinet">MyAccount</a></li>
                         <li> <a href="/user/logout">Admin(Logout)</a></li>

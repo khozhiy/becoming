@@ -32,6 +32,9 @@
                                 <p>Номер группы:</p>
                                 <input type="text" name="number_groop" placeholder="Номер группы" value="<?php echo $number_groop; ?>"/>
 
+                                <p>E-mail:</p>
+                                <input type="text" name="email" placeholder="E-mail" value="<?php echo $email; ?>"/>
+
                                 <p>Кол-во баллов:</p>
                                 <input type="text" name="number_balls" placeholder="Кол-во баллов" value="<?php echo $number_balls; ?>"/>
 
