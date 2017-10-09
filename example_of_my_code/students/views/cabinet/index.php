@@ -42,7 +42,7 @@
                                 <input type="text" name="year_birth" placeholder="Год рождения" value="<?php echo $year_birth; ?>"/>
 
                                 <p>Местный/приезжий:</p>
-                                <input type="text" name="local_in_town" placeholder="Местный/приезжий" value="<?php echo $local_in_town; ?>"/>
+                                <input type="text" name="local_in_town" placeholder="Местный/Приезжий" value="<?php echo $local_in_town; ?>"/>
 
                                 <p>Пароль:</p>
                                 <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>

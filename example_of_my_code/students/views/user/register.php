@@ -30,7 +30,7 @@
                                 <input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>"/></br>
                                 <input type="text" name="number_balls" placeholder="Кол-во баллов" value="<?php echo $number_balls; ?>"/></br>
                                 <input type="text" name="year_birth" placeholder="Год рождения" value="<?php echo $year_birth; ?>"/></br>
-                                <input type="text" name="local_in_town" placeholder="Местный/приезжий" value="<?php echo $local_in_town; ?>"/></br>
+                                <input type="text" name="local_in_town" placeholder="Местный/Приезжий" value="<?php echo $local_in_town; ?>"/></br>
                                 <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/></br>
                                 <input type="submit" name="submit" class="btn btn-default" value="Регистрация" />
                             </form>
